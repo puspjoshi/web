@@ -13,7 +13,17 @@ $res = false;
 $heading = $_POST['banner'];
 $status = $_POST['status'];
 
-$sql = "insert into banner (`heading`,`status`) values ('".$heading."','".$status."')";
+$name = $_FILES['profile']['name'];
+$tmp_name = $_FILES['profile']['tmp_name'];
+
+$destination = "../img/banner/";
+
+move_uploaded_file($_FILES['profile']['tmp_name'], $destination.$name);
+
+
+// echo "<pre>"; print_r($_FILES); exit;
+
+$sql = "insert into banner (`heading`,`status`,`image`) values ('".$heading."','".$status."','".$name."')";
 $res = mysqli_query($conn, $sql);
 if($res){
 	header('Location:banner_add.php');

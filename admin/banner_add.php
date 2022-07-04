@@ -45,8 +45,8 @@ session_start();
                 <div class="form-group">
                   <label>Status</label>
                   <select class="form-control select2" name="status" style="width: 100%;">
-                    <option selected="selected">Publish</option>
-                    <option>Unpublish</option>
+                    <option selected="selected" value="1">Publish</option>
+                    <option value="0">Unpublish</option>
                     
                   </select>
                 </div>
