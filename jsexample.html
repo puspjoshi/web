@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Js example</title>
+</head>
+<body>
+	<div class="wrapper">
+		<form>
+			
+			<input type="text" name="number" id="num" />
+			<input type="button" name="calculate" value="Caclculte" onclick="return calculateTable();"  />
+			<div id="result"></div>
+		</form>
+	</div>
+	<script type="text/javascript">
+		function calculateTable(){
+			var number = document.getElementById('num').value;
+			if(number == ""){
+				document.getElementById('result').innerHTML = "Please enter valid number";
+				return false;
+			}
+			//alert(number);
+			console.log(document);
+			var mul= "";
+
+			for(var i = 1; i <= 10; i++){
+
+				mul += number+"*"+i +" = " +number * i+"<br />";
+
+			}	
+			document.getElementById('result').innerHTML = mul;
+
+
+			return false;
+		}
+	</script>
+
+</body>
+</html>
